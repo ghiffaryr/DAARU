@@ -261,7 +261,7 @@ def DANN_Attention_Residual_Unet(input_shape, num_classes=1, dropout_rate = 0.0,
     source_classification_model = Model(inputs=[input_img], outputs=[class_output])
     # source_classification_model.compile(optimizer=LazyAdam(lr = 1e-3), 
     #                                 loss=dice_loss, 
-    #                                 metrics=metrics)
+    #                                 metrics=[iou,iou_thresholded])
 
     return discriminator_model, source_classification_model, model
 
@@ -359,7 +359,7 @@ def DANN_v2_Attention_Residual_Unet(input_shape, num_classes=1, dropout_rate = 0
     source_classification_model = Model(inputs=[input_img], outputs=[class_output])
     # source_classification_model.compile(optimizer=LazyAdam(lr = 1e-3), 
     #                                 loss=dice_loss, 
-    #                                 metrics=metrics)
+    #                                 metrics=[iou,iou_thresholded])
 
     return discriminator_model, source_classification_model, model
     
@@ -457,7 +457,7 @@ def DANN_v3_Attention_Residual_Unet(input_shape, num_classes=1, dropout_rate = 0
     source_classification_model = Model(inputs=[input_img], outputs=[class_output])
     # source_classification_model.compile(optimizer=LazyAdam(lr = 1e-3), 
     #                                 loss=dice_loss, 
-    #                                 metrics=metrics)
+    #                                 metrics=[iou,iou_thresholded])
 
     return discriminator_model, source_classification_model, model
     
